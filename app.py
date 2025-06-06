@@ -9,9 +9,9 @@ from spotipy.oauth2 import SpotifyOAuth
 
 st.set_page_config(page_title="Music Recommender", layout="wide")
 
-CLIENT_ID = '6ba6e7ce109a4f5386a882a14af9548e'
-CLIENT_SECRET = '215a70945069468aa485345cfd0bc79b'
-REDIRECT_URI = 'http://127.0.0.1:8501' 
+CLIENT_ID = st.secrets["spotify"]["client_id"]
+CLIENT_SECRET = st.secrets["spotify"]["client_secret"]
+REDIRECT_URI = st.secrets["spotify"]["redirect_uri"]
 SCOPE = "playlist-modify-public playlist-modify-private"
 
 sp_oauth = SpotifyOAuth(
